@@ -7,7 +7,7 @@
 This is a simple example of a Containernet custom topology.
 """
 from mininet.net import Containernet
-from mininet.node import Controller
+from mininet.node import Controller, RemoteController
 from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.log import info, setLogLevel
