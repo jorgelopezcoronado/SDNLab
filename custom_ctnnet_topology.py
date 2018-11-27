@@ -40,6 +40,3 @@ info('*** Starting network\n')
 net.start()
 info('*** Running CLI\n')
 CLI(net)
-info('*** Stopping network')
-net.stop()
-
