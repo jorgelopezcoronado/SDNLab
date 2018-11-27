@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 ## Example topology for containernet
-## Created by Jorge López 
+## Created by Jorge Lopez 
 
 """
 This is a simple example of a Containernet custom topology.
