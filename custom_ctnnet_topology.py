@@ -16,7 +16,7 @@ setLogLevel('info')
 
 net = Containernet()
 info('*** Adding controller\n')
-c0 = RemoteController( 'c0', ip=sys.argv[1], port=int(sys.argv[2]))
+c0 = RemoteController( 'c0' )'
 net.addController(c0)
 info('*** Adding docker containers\n')
 h1 = net.addDocker('h1', ip='10.0.0.251', mac='9a:d8:73:d8:90:6a', dimage="mysql:5.7", environment={"MYSQL_DATABASE": "exampledb", "MYSQL_USER": "exampleuser", "MYSQL_PASSWORD": "examplepass", "MYSQL_RANDOM_ROOT_PASSWORD": "1" })
