@@ -12,17 +12,19 @@ from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.log import info, setLogLevel
 import sys
+import socket
+
 setLogLevel('info')
 
 net = Containernet()
 info('*** Adding controller\n')
-c0 = RemoteController( 'c0' )
+c0 = RemoteController( 'c0' , ip=socket.gethostbyname("onos"), port=6633)
 net.addController(c0)
 info('*** Adding docker containers\n')
-h1 = net.addDocker('h1', ip='10.0.0.251', mac='9a:d8:73:d8:90:6a', dimage="mysql:5.7", environment={"MYSQL_DATABASE": "exampledb", "MYSQL_USER": "exampleuser", "MYSQL_PASSWORD": "examplepass", "MYSQL_RANDOM_ROOT_PASSWORD": "1" })
-h2 = net.addDocker('h2', ip='10.0.0.252', mac='9a:d8:73:d8:90:6b', dimage="wordpress:latest", ports=[8080], port_bindings={80:8080}, environment={"WORDPRESS_DB_HOST": "10.0.0.251", "WORDPRESS_DB_USER": "exampleuser", "WORDPRESS_DB_PASSWORD": "examplepass", "WORDPRESS_DB_NAME": "exampledb"})
-h3 = net.addDocker('h3', ip='10.0.0.253', mac='9a:d8:73:d8:90:6c', dimage="lab-api", ports=[8888], port_bindings={5000:8888})
-h4 = net.addDocker('h4', ip='10.0.0.254', mac='9a:d8:73:d8:90:6d', dimage="lab-web", ports=[8081], port_bindings={80:8081})
+h1 = net.addDocker('h1', ip='10.0.0.251', mac='9a:d8:73:d8:90:6a', dimage="mymysql:latest", environment={"MYSQL_DATABASE": "exampledb", "MYSQL_USER": "exampleuser", "MYSQL_PASSWORD": "examplepass", "MYSQL_RANDOM_ROOT_PASSWORD": "1" })
+h2 = net.addDocker('h2', ip='10.0.0.252', mac='9a:d8:73:d8:90:6b', dimage="mywordpress:latest", ports=[8080], port_bindings={80:8080}, environment={"WORDPRESS_DB_HOST": "10.0.0.251", "WORDPRESS_DB_USER": "exampleuser", "WORDPRESS_DB_PASSWORD": "examplepass", "WORDPRESS_DB_NAME": "exampledb"})
+h3 = net.addDocker('h3', ip='10.0.0.253', mac='9a:d8:73:d8:90:6c', dimage="lab-api:latest", ports=[8888], port_bindings={5000:8888})
+h4 = net.addDocker('h4', ip='10.0.0.254', mac='9a:d8:73:d8:90:6d', dimage="lab-web:latest", ports=[8081], port_bindings={80:8081})
 info('*** Adding switches\n')
 s1 = net.addSwitch('s1')
 s2 = net.addSwitch('s2')
@@ -40,6 +42,8 @@ net.addLink( s2, s4, 4, 2 )
 net.addLink( s3, s4, 4, 3 )
 info('*** Starting network\n')
 net.start()
+h1.sendCmd("/entrypoint.sh", "mysqld", "&")
+#h1.sendCmd("/entrypoint.sh", "mysqld", "&")
 info('*** Running CLI\n')
 CLI(net)
 net.stop()
