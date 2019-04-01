@@ -46,6 +46,7 @@ h1.cmd("/entrypoint.sh mysqld &")
 h2.cmd("/usr/local/bin/docker-entrypoint.sh apache2-foreground &")
 h3.cmd("ifconfig h3-eth1 10.0.0.253")
 h3.cmd("python3 /usr/src/app/app.py &")
+h4.cmd("service nginx start& ")
 
 info('*** Running CLI\n')
 CLI(net)
