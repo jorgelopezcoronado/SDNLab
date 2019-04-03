@@ -22,16 +22,16 @@ There are 6 docker images you need for this laboratory. Those are:
     image](https://hub.docker.com/r/onosproject/onos/), to get it,
     execute:
 
-    ``` {.bash language="bash"}
+    ```bash
                 docker pull onosproject/onos
             
-    ```
+     ```
 
 2.  The official [Containernet docker
     image](https://github.com/containernet/containernet), to get it,
     execute:
 
-    ``` {.bash language="bash"}
+    ```bash
                 docker pull containernet/containernet
             
     ```
@@ -51,7 +51,7 @@ There are 6 docker images you need for this laboratory. Those are:
             
     ```
 
-    For more information on builing docker images see [the containers
+    For more information on building docker images see [the containers
     lab](https://github.com/letitbeat/containers-lab).
 
 4.  A modified mysql image (referred as h1) , to get it, execute:
@@ -98,6 +98,7 @@ the following contents (or download it from the repository)
           - "8181:8181"
           - "6633:6633"
           - "6653:6653"
+        container_name: onos
 
       containernet: 
         depends_on: 
@@ -108,6 +109,7 @@ the following contents (or download it from the repository)
         privileged: true
         pid: host
         tty: true
+        container_name: containernet
         
 
 After that, execute the docker *composition* with:
@@ -115,18 +117,14 @@ After that, execute the docker *composition* with:
         docker-compose up
         
 
-You may choose to execute it in detached mode (by adding -d flag to the
+You may choose to execute it in detached mode (by adding `-d` flag to the
 command) or better, open a new terminal.
 
 After a while both of your images will be running, log in into the
 containernet image by executing:
 
-            docker exec -it SDNLab_containernet_1 bash
+            docker exec -it containernet bash
         
-
-Attention: the name of the image assumes your docker-compose file is
-executed in a directory called `SDNLab`. Alternatively, you can get the
-container ID and replace that name.
 
 Inside the container, to run the intended topology, execute the
 following commands:
@@ -143,7 +141,7 @@ Your topology should be up and running, this is the intended topology:
 Inside the containernet console you can try to check the connectivity
 between hosts, for instance from h1 to h2, execute:
 
-            h1 ping -c 5 h2
+            containernet> h1 ping -c 5 h2
         
 
 Normally, as there are no data-paths configured in your SDN controller
@@ -159,10 +157,10 @@ Manipulating SDN components
 There are many ways to configure data-paths with an Onos controller,
 however, an easy way is to do it though the Graphical User
 Interface (GUI). Newer versions of Onos do not have the GUI enabled by
-default, therefore we will use a console to enable it first. Log in to
+default, therefore we will use a console to enable it first. Open a new terminal and log in to
 your Onos controller via:
 
-            docker exec -it SDNLab_onos_1 bash;
+            docker exec -it onos bash;
         
 
 Once logged in, execute the Onos Command Line Interface (CLI) or client
@@ -204,14 +202,14 @@ Go to the main menu `->` Applications. Enable the following applications
 Indeed, you could have enabled all these applications via the Onos
 console. Go to your containernet console and execute the command:
 
-            pingall
+            containernet> pingall
         
 
 You should still see no connectivity, but, do not worry, we did that
 just to make sure our controller recognizes fully our data-plane. Go to
 the main menu `->` Topology, you should be able to see the correct
 topology (if you do not see the hosts toggle the host visibility by
-typing h on the GUI or enabling on the display options panel at the left
+typing `h` on the GUI or enabling on the display options panel at the left
 lower corner).
 
 Configuring SDN data-paths
@@ -227,7 +225,7 @@ applications menu and enable
 `Reactive Forwarding (org.onosproject.fwd)`. Go to your containernet
 console and execute the command:
 
-            pingall
+            containernet> pingall
         
 
 The results should be completely different, you should have near to 0%
@@ -235,7 +233,7 @@ packet loss. You may believe that this is a great tool, however, there
 is no control over which hosts communicate with each other; simply all
 hosts are able to communicate using any protocol. This is at least
 insecure, and most probably not functionally desirable, e.g., assume we
-need to communicate only h1 with h2 and h3 with h4 (which is the case
+need to communicate only `h1` with `h2` and `h3` with `h4` (which is the case
 for our lab, why to communicate the mysql database with the lab-api?).
 Additionally, our recent study shows that applications may flood the
 network or install undesired data-paths; in fact, the reactive
@@ -262,10 +260,10 @@ the `Create Host-To-Host Flow` as shown in the picture below.
 
 ![image](/images/GUIIntent.png)
 
-Check that there is both ping connectivity between h1 and h2 and that
+Check that there is both ping connectivity between `h1` and `h2` and that
 the wordpress works correctly (i.e., the mysql at h1 can be reached by
-wordrepss at h2). Go to the main menu `->` Topology, click on s1 (the
-switch with label of:0000000000000001, to see the labels hit the L key
+wordpress at `h2`). Go to the main menu `->` Topology, click on `s1` (the
+switch with label `of:0000000000000001`, to see the labels hit the `L` key
 on your keyboard), and then click `Show Flow View for This Device` below
 the summary panel at the right side. You should understand that the
 intent is translated to flow rules. In fact, the intent is translated to
@@ -280,16 +278,16 @@ two flow rules, those are:
     and output to port 1
 
 The meaning of the rules is pretty straightforward. The first rule says
-that any packet comming from port 1 (which is connected to h1), coming
-from the MAC address of h1, going to the MAC address of h2 should be
-output to port 2 (which is connected to s2). In order to deliver packets
-from h1 to h2, what is the rule that complements the previous one on s2?
+that any packet comming from port 1 (which is connected to `h1`), coming
+from the MAC address of `h1`, going to the MAC address of `h2` should be
+output to port 2 (which is connected to `s2`). In order to deliver packets
+from `h1` to `h2`, what is the rule that complements the previous one on `s2`?
 Verify that.
 
 Configuring such intents can be insecure, all type of traffic is
 permitted between hosts. Go to the main menu `->` Intents and check that
 there are installed intents. Remove both intents and check that no
-connectivity is possible between h1 and h2 (you can also check that the
+connectivity is possible between `h1` and `h2` (you can also check that the
 flow rules are deleted).
 
 ### Using the REST API
@@ -331,7 +329,7 @@ by going to the REST API, `/devices` and clicking on "Try it out!".
 Go for the intents are in the REST API
 ([<http://localhost:8181/onos/v1/docs/#/intents>](http://localhost:8181/onos/v1/docs/#/intents)).
 Search for the `POST /intents` section. Introduce the following text
-into the stream:
+into the *stream* field:
 
     {
       "type": "PointToPointIntent",
@@ -378,9 +376,9 @@ response (with code 201). This is how simple is to add an intent though
 the REST API. Understand that the selector; the selector *restricts* the
 matching traffic, being able to specify in a granular manner to which
 type of traffic the intent corresponds. Observe that in the intent the
-origin is the port 1 at s2, which corresponds to the host h2; the
-destination port is 3306 due to the fact that wordpress communicates
-with a mysql database (that uses port TCP 3306 at the destiny). If you
+origin is the port 1 at `s2`, which corresponds to the host `h2`; the
+destination port is `3306` due to the fact that wordpress communicates
+with a mysql database (that uses port `TCP 3306` at the destiny). If you
 try the wordpress at this moment no database communication should
 succeed. The reason is that h1 (mysql) cannot reply to the
 communication. To do so, add the following intent:
@@ -425,11 +423,11 @@ communication. To do so, add the following intent:
       }  
     }
 
-Pay attention that this time the selector has source port 3306! Try ping
+Pay attention that this time the selector has source port `3306`! Try ping
 communication and the wordpress database connection. As you can see, the
 ping is unsuccessful while the wordpress communication is. This gives a
 great level of granularity. Further, there are other advantages of using
-intents, for example, assume that the link between s1 and s2 gets
+intents, for example, assume that the link between `s1` and `s2` gets
 interrupted. Intents automatically monitor changes in the topology and
 adjust the flow rules to an alternative path (if possible). Observe the
 flow rules (either by inspecting the GUI or by CLI executing the command
@@ -515,8 +513,10 @@ following flow rule (choose any app ID of your choosing, remember it):
     }
         
 
-Add the corresponding rules so that h4 can connect to port 5000 at h3.
-Hint, there are 3 more rules. After adding the rules log in to h4 using:
+Add the corresponding rules so that `h4` can connect to port `5000` at `h3`.
+> Hint, there are 3 more rules. 
+
+After adding the rules log in to `h4` using:
 
             docker exec -it mn.h4 bash
         
