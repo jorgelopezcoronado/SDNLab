@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+   onos:
+      image: onosproject/onos:latest
+      restart: always
+      ports:
+         - "8181:8181"
+         - "6633:6633"
+         - "6653:6653"
+
+   containernet: 
+      depends_on: 
+         - onos
+      image: containernet/containernet:latest
+      volumes:
+         - "/var/run/docker.sock:/var/run/docker.sock"      
+      privileged: true
+      pid: host
+      tty: true 
+
