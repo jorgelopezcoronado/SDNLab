@@ -451,7 +451,7 @@ port and what is the disposition (output to another port, most
 commonly).
 
 To exemplify how to configure a data-path using flow rules let us
-configure the data-path h4`->`s4`->`s3`->`h3 for the traffic matching
+configure the data-path(s) h4`<->`s4`<->`s3`<->`h3 for the traffic matching
 (i.e., with selector):
 
         ETH_TYPE=0x800 and IPV4_SRC=10.0.0.254/32 and IPV4_DST=10.0.0.253/32 and IP_PROTO=6 and TCP_DST=5000
