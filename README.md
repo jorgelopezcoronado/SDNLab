@@ -535,3 +535,5 @@ see the following message then your rules are wrong:
 If you did not configure the rules properly, an easy way to delete flow
 rules is to do it via the REST API with an application ID
 (<http://localhost:8181/onos/v1/docs/#!/flows/delete_flows_application_appId>).
+
+Should you have any doubts, you can send an email to [us](mailto:jorge.lopez@telecom-sudparis.eu, jose.reyes@telecom-sudparis.eu)
