@@ -529,7 +529,7 @@ Execute the following command:
 If you see a JSON message you have successfully added the rules. If you
 see the following message then your rules are wrong:
 
-            curl: (7) Failed to connect to 10.0.0.253 port 8888: Connection refused
+            curl: (7) Failed to connect to 10.0.0.253 port 5000: Connection refused
         
 
 If you did not configure the rules properly, an easy way to delete flow
