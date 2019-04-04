@@ -454,7 +454,7 @@ To exemplify how to configure a data-path using flow rules let us
 configure the data-path h4`->`s4`->`s3`->`h3 for the traffic matching
 (i.e., with selector):
 
-        ETH_TYPE=0x800 and IPV4_SRC="10.0.0.254/32" and IPV4_DST=10.0.0.253/32 and IP_PROTO=6 and TCP_DST=5000
+        ETH_TYPE=0x800 and IPV4_SRC=10.0.0.254/32 and IPV4_DST=10.0.0.253/32 and IP_PROTO=6 and TCP_DST=5000
 
 Go to the REST API to post flows
 (<http://localhost:8181/onos/v1/docs/#!/flows/post_flows>), post the
