@@ -111,6 +111,7 @@ the following contents (or download it from the repository)
         tty: true
         container_name: containernet
         
+Install [docker-compose](https://docs.docker.com/compose/install/).
 
 After that, execute the docker *composition* with:
 
