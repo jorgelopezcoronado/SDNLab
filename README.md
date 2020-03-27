@@ -167,7 +167,7 @@ your Onos controller via:
 Once logged in, execute the Onos Command Line Interface (CLI) or client
 console by executing:
 
-            ./apache-karaf-4.2.3/bin/client
+            ./apache-karaf-4.2.8/bin/client
         
 
 Inside the Onos console you can check many things, however, for the
