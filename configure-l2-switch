@@ -1,0 +1,47 @@
+#!/bin/bash
+export SDN_CTRLR=$1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 ff:ff:ff:ff:ff:ff 2,3; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6b 2 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6d 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6b 2; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6c 3; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6d 3; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6b 2 9a:d8:73:d8:90:6a 1; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6a 1; 
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6d 3 9a:d8:73:d8:90:6a 1; 
+
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 ff:ff:ff:ff:ff:ff 2,3,4; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6a 2 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6d 4 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6a 2; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6c 3; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6d 4; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6b 1; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6b 1; 
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6b 1; 
+
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 ff:ff:ff:ff:ff:ff 2,3,4; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 ff:ff:ff:ff:ff:ff 1,4; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6b 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 ff:ff:ff:ff:ff:ff 1,2; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6a 2; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6b 3; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6d 4; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6c 1; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6d 4; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6b 3 9a:d8:73:d8:90:6c 1; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6c 1; 
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6a 2; 
+
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 ff:ff:ff:ff:ff:ff 2,3; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6b 2 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6a 3 ff:ff:ff:ff:ff:ff 1; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6b 2; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6c 3; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6a 3; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6b 2 9a:d8:73:d8:90:6d 1; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6d 1; 
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6a 3 9a:d8:73:d8:90:6d 1; 

@@ -1,0 +1,1333 @@
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "4"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000002",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "4"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "4"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "4"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "4"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000003",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "4"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		,{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "ff:ff:ff:ff:ff:ff"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "3"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "1"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6b"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "2"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6c"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000004",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}
+		
+		]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "ETH_SRC",
+		"mac": "9a:d8:73:d8:90:6a"
+		},
+		{
+		"type": "ETH_DST",
+		"mac": "9a:d8:73:d8:90:6d"
+		},
+		{	
+		"type": "IN_PORT",
+		"port": "3"
+		}
+	]}
+}

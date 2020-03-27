@@ -1,0 +1,67 @@
+#! /usr/bin/perl
+
+use REST::Client;
+
+
+my @params = @ARGV;
+my ($controller_ip, $device, $from, $input, $to, $output)  = @params;
+
+my $client = REST::Client->new();
+
+my $request_uri = "http://$controller_ip:8181/onos/v1/flows/$device?appId=test.app";
+#print $request_uri."\n";
+
+my @outputs = split(/,/, $output);
+
+my $out = "";
+my $count = 0;
+foreach (@outputs)
+{
+	if($count++ != 0)
+	{
+		$out .= ",";
+	}
+	$out .= "{
+			\"type\": \"OUTPUT\",
+			\"port\": \"$_\"
+		}\n\t\t";
+	
+}
+
+$content = "{
+	\"priority\": 500,
+	\"timeout\": 0,
+	\"isPermanent\": true,
+	\"deviceId\": \"$device\",
+	\"treatment\": {
+		\"instructions\": [
+		$out
+		]
+	},
+	\"selector\": {
+		\"criteria\": [
+		{
+		\"type\": \"ETH_SRC\",
+		\"mac\": \"$from\"
+		},
+		{
+		\"type\": \"ETH_DST\",
+		\"mac\": \"$to\"
+		},
+		{	
+		\"type\": \"IN_PORT\",
+		\"port\": \"$input\"
+		}
+	]}
+}";
+
+$client->POST($request_uri, $content, {'Authorization' => 'Basic b25vczpyb2Nrcw==', 'Content-Type' => 'application/json', 'Accept' => 'application/json'});
+
+if( $client->responseCode() eq '200' || $client->responseCode() eq '201' ){
+     print "$content\n\n";
+ }
+else
+{
+	print "Error! Response Code ".$client->responseCode()."\n";
+	print "Response\n".$client->responseContent()."\n";
+}

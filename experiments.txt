@@ -1,0 +1,715 @@
+export i=0; while [ $i -lt 1000 ]; do ./add 172.20.10.10 of:0000000000000002 2 1 $i 4; let "i++";  done
+
+====================================================================================================================================================================================
+
+export j=1; while [ $j -lt 65 ]; do export i=1; while [ $i -lt 1025 ]; do ./add 178.62.87.252 of:0000000000000002 1 $j $i $j; let "z=$i*$j"; echo $z; let "i++"; done; let "j++"; done;
+
+export j=65; while [ $j -lt 66 ]; do export i=1; while [ $i -lt 1025 ]; do ./add 178.62.87.252 of:0000000000000002 1 $j $i $j; let "z=$i*$j"; echo $z; let "i++"; done; let "j++"; done;
+
+========================================
+========================================
+h1-s1-s3-s2-s1-s4-s2-h2
+
+for i in 1 4; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000001 1 2 1 3;
+./add 172.20.10.10 of:0000000000000001 2 1 3 1;
+
+./add 172.20.10.10 of:0000000000000003 1 2 2 3;
+./add 172.20.10.10 of:0000000000000003 2 1 3 2;
+
+./add 172.20.10.10 of:0000000000000002 1 2 3 2;
+./add 172.20.10.10 of:0000000000000002 2 1 2 3;
+
+./add 172.20.10.10 of:0000000000000001 1 2 2 4;
+./add 172.20.10.10 of:0000000000000001 2 1 4 2;
+
+./add 172.20.10.10 of:0000000000000004 1 2 2 3;
+./add 172.20.10.10 of:0000000000000004 2 1 3 2;
+
+./add 172.20.10.10 of:0000000000000002 1 2 4 1;
+./add 172.20.10.10 of:0000000000000002 2 1 1 4;
+
+========================================
+========================================
+h1-s1-s2-s3-s1-s4-s3-h3
+
+for i in 1 4; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000001 1 3 1 2;
+./add 172.20.10.10 of:0000000000000001 3 1 2 1;
+
+./add 172.20.10.10 of:0000000000000002 1 3 2 3;
+./add 172.20.10.10 of:0000000000000002 3 1 3 2;
+
+./add 172.20.10.10 of:0000000000000003 1 3 3 2;
+./add 172.20.10.10 of:0000000000000003 3 1 2 3;
+
+./add 172.20.10.10 of:0000000000000001 1 3 3 4;
+./add 172.20.10.10 of:0000000000000001 3 1 4 3;
+
+./add 172.20.10.10 of:0000000000000004 1 3 2 4;
+./add 172.20.10.10 of:0000000000000004 3 1 4 2;
+
+./add 172.20.10.10 of:0000000000000003 1 3 4 1;
+./add 172.20.10.10 of:0000000000000003 3 1 1 4;
+
+========================================
+========================================
+h1-s1-s2-s4-s1-s3-s4-h4
+
+for i in 1 4; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000001 1 4 1 2;
+./add 172.20.10.10 of:0000000000000001 4 1 2 1;
+
+./add 172.20.10.10 of:0000000000000002 1 4 2 4;
+./add 172.20.10.10 of:0000000000000002 4 1 4 2;
+
+./add 172.20.10.10 of:0000000000000004 1 4 3 2;
+./add 172.20.10.10 of:0000000000000004 4 1 2 3;
+
+./add 172.20.10.10 of:0000000000000001 1 4 4 3;
+./add 172.20.10.10 of:0000000000000001 4 1 3 4;
+
+./add 172.20.10.10 of:0000000000000003 1 4 2 4;
+./add 172.20.10.10 of:0000000000000003 4 1 4 2;
+
+./add 172.20.10.10 of:0000000000000004 1 4 4 1;
+./add 172.20.10.10 of:0000000000000004 4 1 1 4;
+
+========================================
+========================================
+h2-s2-s1-s4-s2-s3-s4-h4
+
+for i in 2 4; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000002 2 4 1 2;
+./add 172.20.10.10 of:0000000000000002 4 2 2 1;
+
+./add 172.20.10.10 of:0000000000000001 2 4 2 4;
+./add 172.20.10.10 of:0000000000000001 4 2 4 2;
+
+./add 172.20.10.10 of:0000000000000004 2 4 2 3;
+./add 172.20.10.10 of:0000000000000004 4 2 3 2;
+
+./add 172.20.10.10 of:0000000000000002 2 4 4 3;
+./add 172.20.10.10 of:0000000000000002 4 2 3 4;
+
+./add 172.20.10.10 of:0000000000000003 2 4 3 4;
+./add 172.20.10.10 of:0000000000000003 4 2 4 3;
+
+./add 172.20.10.10 of:0000000000000004 2 4 4 1;
+./add 172.20.10.10 of:0000000000000004 4 2 1 4;
+
+========================================
+========================================
+h2-s2-s1-s3-s2-s4-s3-h3
+
+for i in 2 3; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000002 2 3 1 2;
+./add 172.20.10.10 of:0000000000000002 3 2 2 1;
+
+./add 172.20.10.10 of:0000000000000001 2 3 2 3;
+./add 172.20.10.10 of:0000000000000001 3 2 3 2;
+
+./add 172.20.10.10 of:0000000000000003 2 3 2 3;
+./add 172.20.10.10 of:0000000000000003 3 2 3 2;
+
+./add 172.20.10.10 of:0000000000000002 2 3 3 4;
+./add 172.20.10.10 of:0000000000000002 3 2 4 3;
+
+./add 172.20.10.10 of:0000000000000004 2 3 3 4;
+./add 172.20.10.10 of:0000000000000004 3 2 4 3;
+
+./add 172.20.10.10 of:0000000000000003 2 3 4 1;
+./add 172.20.10.10 of:0000000000000003 3 2 1 4;
+
+
+========================================
+========================================
+h4-s4-s1-s3-s4-s2-s3-h3
+
+for i in 4 3; do ./arp 172.20.10.10 of:000000000000000$i; done;
+
+./add 172.20.10.10 of:0000000000000004 4 3 1 2;
+./add 172.20.10.10 of:0000000000000004 3 4 2 1;
+
+./add 172.20.10.10 of:0000000000000001 4 3 4 3;
+./add 172.20.10.10 of:0000000000000001 3 4 3 4;
+
+./add 172.20.10.10 of:0000000000000003 4 3 2 4;
+./add 172.20.10.10 of:0000000000000003 3 4 4 2;
+
+./add 172.20.10.10 of:0000000000000004 4 3 4 3;
+./add 172.20.10.10 of:0000000000000004 3 4 3 4;
+
+./add 172.20.10.10 of:0000000000000002 4 3 4 3;
+./add 172.20.10.10 of:0000000000000002 3 4 3 4;
+
+./add 172.20.10.10 of:0000000000000003 4 3 3 1;
+./add 172.20.10.10 of:0000000000000003 3 4 1 3;
+
+
+
+==============================================================================================================================================================================================================================================================================
+mininet> dpctl dump-flows
+*** s1 ------------------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x730000294a67f8, duration=357.689s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x730000e3b1ad31, duration=357.529s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:2
+ cookie=0x73000023f190c4, duration=549.08s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:3
+ cookie=0x730000a077a9d9, duration=447.588s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:1
+ cookie=0x730000a768d74a, duration=446.734s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:3
+ cookie=0x730000f19a93dd, duration=609.246s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x7300006d86bded, duration=251.012s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x730000f98ac9f7, duration=446.573s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:4
+ cookie=0x7300009724a7ad, duration=550.105s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:1
+ cookie=0x7300008781108f, duration=303.194s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:2
+ cookie=0x73000033591a70, duration=549.229s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:4
+ cookie=0x73000012d78b71, duration=550.259s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:2
+ cookie=0x7300000e248128, duration=609.068s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:1
+ cookie=0x7300006279f965, duration=250.847s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x73000002023b63, duration=608.089s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x7300004e74f4d4, duration=447.756s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:2
+ cookie=0x73000033e11cf1, duration=303.354s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=2,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x7300006df56f15, duration=608.249s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:4
+ cookie=0x7300001c71a1d8, duration=625.09s, table=0, n_packets=36, n_bytes=1512, idle_age=241, priority=501,arp,in_port=1 actions=ALL
+ cookie=0x7300009587b09b, duration=625.103s, table=0, n_packets=102, n_bytes=4284, idle_age=149, priority=500,arp actions=output:1
+*** s2 ------------------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x73000079141464, duration=549.801s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x730000e6e7736c, duration=447.421s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x730000c82eed59, duration=250.008s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x73000035259999, duration=357.869s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:1
+ cookie=0x730000ee9790ad, duration=302.403s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=4,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x7300001e31b30e, duration=608.595s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:2
+ cookie=0x730000a5e99044, duration=356.897s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:4
+ cookie=0x730000bc34d77c, duration=549.954s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x73000007ad0454, duration=447.262s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x73000084e9267d, duration=607.426s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:4
+ cookie=0x730000b1369417, duration=607.59s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:1
+ cookie=0x730000e31c8c2a, duration=358.021s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:2
+ cookie=0x730000e4c34a12, duration=303.688s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=1,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:2
+ cookie=0x73000087c35cd7, duration=249.846s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x73000002b33038, duration=303.531s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=2,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:1
+ cookie=0x7300002b9cd2d8, duration=608.423s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:3
+ cookie=0x7300007f23a403, duration=302.605s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:4
+ cookie=0x730000c80c52cb, duration=357.05s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:3
+ cookie=0x730000ab8fbd67, duration=624.923s, table=0, n_packets=34, n_bytes=1428, idle_age=149, priority=501,arp,in_port=1 actions=ALL
+ cookie=0x730000e1751546, duration=624.942s, table=0, n_packets=104, n_bytes=4368, idle_age=149, priority=500,arp actions=output:1
+*** s3 ------------------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x7300005261edce, duration=356.556s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x7300005052d1b5, duration=301.818s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=4,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:1
+ cookie=0x730000def2ca1d, duration=249.526s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=1,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:3
+ cookie=0x730000d2ba12c9, duration=446.411s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x730000302916f6, duration=548.611s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:1
+ cookie=0x730000f4e51d2e, duration=356.727s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x7300007c23e557, duration=250.695s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=2,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:4
+ cookie=0x730000cafdbded, duration=549.406s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:3
+ cookie=0x73000059c980fd, duration=302.808s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:2
+ cookie=0x730000e37b272c, duration=250.534s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=4,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:2
+ cookie=0x73000034658319, duration=446.254s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x730000511e4abd, duration=249.69s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=3,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:1
+ cookie=0x730000f40d0f4e, duration=549.639s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:2
+ cookie=0x7300002d84db4e, duration=608.77s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x730000235cf483, duration=548.412s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:4
+ cookie=0x7300001c621176, duration=302.988s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=2,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x73000070726c79, duration=608.924s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x73000064a1b414, duration=301.617s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=1,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:4
+ cookie=0x73000093f0e422, duration=624.672s, table=0, n_packets=35, n_bytes=1470, idle_age=149, priority=501,arp,in_port=1 actions=ALL
+ cookie=0x730000265b4c5b, duration=624.689s, table=0, n_packets=103, n_bytes=4326, idle_age=149, priority=500,arp actions=output:1
+*** s4 ------------------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x730000e94f62b6, duration=357.388s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:3
+ cookie=0x730000937e3641, duration=251.389s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=1,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:2
+ cookie=0x730000e8d8267a, duration=446.098s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:1
+ cookie=0x730000a105d23a, duration=446.946s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:3
+ cookie=0x730000fe3b03f2, duration=548.779s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.3,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x7300005e6abc30, duration=250.337s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=4,nw_src=10.0.0.4,nw_dst=10.0.0.3 actions=output:3
+ cookie=0x7300008e787c66, duration=447.108s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:2
+ cookie=0x7300004cef3a14, duration=302.028s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=4,nw_src=10.0.0.3,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x730000bdaa6441, duration=445.938s, table=0, n_packets=8, n_bytes=784, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.4,nw_dst=10.0.0.1 actions=output:4
+ cookie=0x730000a5cb918c, duration=357.239s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:2
+ cookie=0x73000099aca3d9, duration=251.21s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=2,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:1
+ cookie=0x7300008f2b4cdc, duration=548.937s, table=0, n_packets=12, n_bytes=1176, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.3 actions=output:4
+ cookie=0x7300009638e381, duration=607.772s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.1 actions=output:2
+ cookie=0x730000cbcf0e5e, duration=250.178s, table=0, n_packets=5, n_bytes=490, idle_age=175, priority=500,ip,in_port=3,nw_src=10.0.0.3,nw_dst=10.0.0.4 actions=output:4
+ cookie=0x730000851fd982, duration=356.226s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=1,nw_src=10.0.0.4,nw_dst=10.0.0.2 actions=output:4
+ cookie=0x7300003841b8c0, duration=302.208s, table=0, n_packets=8, n_bytes=784, idle_age=151, priority=500,ip,in_port=3,nw_src=10.0.0.2,nw_dst=10.0.0.3 actions=output:4
+ cookie=0x7300009461f108, duration=356.383s, table=0, n_packets=6, n_bytes=588, idle_age=246, priority=500,ip,in_port=4,nw_src=10.0.0.2,nw_dst=10.0.0.4 actions=output:1
+ cookie=0x730000a407be95, duration=607.931s, table=0, n_packets=24, n_bytes=2352, idle_age=246, priority=500,ip,in_port=2,nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:3
+ cookie=0x73000023aaa81e, duration=624.51s, table=0, n_packets=33, n_bytes=1386, idle_age=199, priority=501,arp,in_port=1 actions=ALL
+ cookie=0x73000036eac865, duration=624.523s, table=0, n_packets=105, n_bytes=4410, idle_age=149, priority=500,arp actions=output:1
+mininet>pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet>  
+==============================
+./arp 157.159.70.102 of:0000000000000001
+./arp 157.159.70.102 of:0000000000000002
+./add 157.159.70.102 of:0000000000000001 1 2 1 2
+./add 157.159.70.102 of:0000000000000002 1 2 2 1
+ 
+./add 157.159.70.102 of:0000000000000001 2 1 2 1
+./add 157.159.70.102 of:0000000000000002 2 1 1 2
+
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "2"
+		}]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "IN_PORT",
+		"port": "1"
+		},
+		{
+		"type": "ETH_TYPE",
+		"ethType": "0x800"
+		},
+		{
+		"type": "IPV4_SRC",
+		"ip": "10.0.0.1/32"
+		},
+		{
+		"type": "IPV4_DST",
+		"ip": "10.0.0.2/32"
+		}
+	]}
+}
+
+
+
+======
+{
+	"priority": 500,
+	"timeout": 0,
+	"isPermanent": true,
+	"deviceId": "of:0000000000000001",
+	"treatment": {
+		"instructions": [
+		{
+			"type": "OUTPUT",
+			"port": "1"
+		}]
+	},
+	"selector": {
+		"criteria": [
+		{
+		"type": "IN_PORT",
+		"port": "2"
+		},
+		{
+		"type": "ETH_TYPE",
+		"ethType": "0x800"
+		},
+		{
+		"type": "IPV4_SRC",
+		"ip": "10.0.0.2/32"
+		},
+		{
+		"type": "IPV4_DST",
+		"ip": "10.0.0.1/32"
+		}
+	]}
+}
+
+===ICTSS===
+
+---- Part 1 ---- 
+
+Activate org.onosproject.fwd REACTIVE, seems it asks each time to the controller!!!
+
+mininet> sh ovs-ofctl dump-flows s1
+NXST_FLOW reply (xid=0x4):
+ cookie=0x10000021b41dc, duration=25.48s, table=0, n_packets=0, n_bytes=0, idle_age=25, priority=5,ip actions=CONTROLLER:65535
+ cookie=0x1000000ea1bfb, duration=25.43s, table=0, n_packets=0, n_bytes=0, idle_age=25, priority=5,arp actions=CONTROLLER:65535
+
+
+export SDN_CTRLR=157.159.70.102
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 ff:ff:ff:ff:ff:ff 2,3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6b 2 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6d 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6b 2; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6c 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6a 1 9a:d8:73:d8:90:6d 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6b 2 9a:d8:73:d8:90:6a 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6a 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000001 9a:d8:73:d8:90:6d 3 9a:d8:73:d8:90:6a 1; sleep 1
+
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 ff:ff:ff:ff:ff:ff 2,3,4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6a 2 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6d 4 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6a 2; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6c 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6b 1 9a:d8:73:d8:90:6d 4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6b 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6b 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000002 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6b 1; sleep 1
+
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 ff:ff:ff:ff:ff:ff 2,3,4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 ff:ff:ff:ff:ff:ff 1,4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6b 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 ff:ff:ff:ff:ff:ff 1,2; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6a 2; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6b 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6c 1 9a:d8:73:d8:90:6d 4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6c 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6a 2 9a:d8:73:d8:90:6d 4; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6b 3 9a:d8:73:d8:90:6c 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6c 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000003 9a:d8:73:d8:90:6d 4 9a:d8:73:d8:90:6a 2; sleep 1
+
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 ff:ff:ff:ff:ff:ff 2,3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6b 2 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6c 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6a 3 ff:ff:ff:ff:ff:ff 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6b 2; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6c 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6d 1 9a:d8:73:d8:90:6a 3; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6b 2 9a:d8:73:d8:90:6d 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6c 3 9a:d8:73:d8:90:6d 1; sleep 1
+./l2-switch $SDN_CTRLR of:0000000000000004 9a:d8:73:d8:90:6a 3 9a:d8:73:d8:90:6d 1; sleep 1
+
+
+ininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> sh for switch in 1 2 3 4; do echo "===Switch S$switch==="; ovs-ofctl dump-flows s$switch; echo; done;
+===Switch S1===
+NXST_FLOW reply (xid=0x4):
+ cookie=0x9b000049a9cf47, duration=472.33s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6c actions=output:3
+ cookie=0x9b00002f6c8e11, duration=467.541s, table=0, n_packets=16, n_bytes=1176, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6a actions=output:1
+ cookie=0x9b0000172d3acd, duration=473.516s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6b actions=output:2
+ cookie=0x9b0000879cd773, duration=471.141s, table=0, n_packets=89, n_bytes=7770, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6d actions=output:3
+ cookie=0x9b0000ab947cba, duration=477.093s, table=0, n_packets=0, n_bytes=0, idle_age=477, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6b,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b00009c69a35a, duration=475.909s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b00002373d3ce, duration=468.739s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6a actions=output:1
+ cookie=0x9b0000c28c515a, duration=478.278s, table=0, n_packets=4, n_bytes=168, idle_age=36, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6a,dl_dst=ff:ff:ff:ff:ff:ff actions=output:2,output:3
+ cookie=0x9b00001d5ff20a, duration=474.703s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6d,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b00007a84d2fc, duration=469.941s, table=0, n_packets=11, n_bytes=798, idle_age=4, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6a actions=output:1
+
+===Switch S2===
+NXST_FLOW reply (xid=0x4):
+ cookie=0x9b0000d208ac23, duration=488.323s, table=0, n_packets=5, n_bytes=434, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6b actions=output:1
+ cookie=0x9b00001f61155f, duration=485.705s, table=0, n_packets=5, n_bytes=434, idle_age=4, priority=500,in_port=4,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6b actions=output:1
+ cookie=0x9b0000e3fa8f38, duration=493.147s, table=0, n_packets=11, n_bytes=798, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6a actions=output:2
+ cookie=0x9b0000e9fe1649, duration=495.624s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000b51dfe28, duration=494.4s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=4,dl_src=9a:d8:73:d8:90:6d,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b00001a1a29a9, duration=496.82s, table=0, n_packets=4, n_bytes=168, idle_age=36, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6a,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000b4399595, duration=498.022s, table=0, n_packets=0, n_bytes=0, idle_age=498, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6b,dl_dst=ff:ff:ff:ff:ff:ff actions=output:2,output:3,output:4
+ cookie=0x9b000079bb5af6, duration=490.727s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6d actions=output:4
+ cookie=0x9b0000a4576269, duration=489.54s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6b actions=output:1
+ cookie=0x9b00006ea599f3, duration=491.951s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6c actions=output:3
+
+===Switch S3===
+NXST_FLOW reply (xid=0x4):
+ cookie=0x9b000069298a55, duration=443.763s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6c actions=output:1
+ cookie=0x9b0000d0a3e940, duration=441.348s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=4,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6c actions=output:1
+ cookie=0x9b0000dfd9cb46, duration=448.694s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=4,dl_src=9a:d8:73:d8:90:6d,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1,output:2
+ cookie=0x9b0000f0e4ca40, duration=440.135s, table=0, n_packets=16, n_bytes=1176, idle_age=4, priority=500,in_port=4,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6a actions=output:2
+ cookie=0x9b0000506f8d1b, duration=451.077s, table=0, n_packets=4, n_bytes=168, idle_age=36, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6a,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1,output:4
+ cookie=0x9b0000b05d8428, duration=449.889s, table=0, n_packets=0, n_bytes=0, idle_age=449, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6b,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000fe164257, duration=447.475s, table=0, n_packets=10, n_bytes=756, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6a actions=output:2
+ cookie=0x9b0000c243e7b7, duration=446.257s, table=0, n_packets=5, n_bytes=434, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6b actions=output:3
+ cookie=0x9b000064e873e9, duration=444.963s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6d actions=output:4
+ cookie=0x9b00002aa23a0e, duration=37.493s, table=0, n_packets=11, n_bytes=966, idle_age=4, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6d actions=output:4
+ cookie=0x9b0000eab38473, duration=442.539s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6c actions=output:1
+ cookie=0x9b000011e14169, duration=452.278s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6c,dl_dst=ff:ff:ff:ff:ff:ff actions=output:2,output:3,output:4
+
+===Switch S4===
+NXST_FLOW reply (xid=0x4):
+ cookie=0x9b00009add6052, duration=417.473s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6b,dl_dst=9a:d8:73:d8:90:6d actions=output:1
+ cookie=0x9b0000eca37ebe, duration=419.892s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6c actions=output:3
+ cookie=0x9b0000d139af63, duration=415.001s, table=0, n_packets=9, n_bytes=826, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6a,dl_dst=9a:d8:73:d8:90:6d actions=output:1
+ cookie=0x9b00000fac7cf6, duration=424.766s, table=0, n_packets=0, n_bytes=0, idle_age=424, priority=500,in_port=2,dl_src=9a:d8:73:d8:90:6b,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000bdb185fc, duration=426s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6d,dl_dst=ff:ff:ff:ff:ff:ff actions=output:2,output:3
+ cookie=0x9b000018d2662d, duration=416.266s, table=0, n_packets=6, n_bytes=476, idle_age=4, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=9a:d8:73:d8:90:6d actions=output:1
+ cookie=0x9b00002e1a21b9, duration=423.58s, table=0, n_packets=1, n_bytes=42, idle_age=277, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6c,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000177d65d0, duration=418.673s, table=0, n_packets=16, n_bytes=1176, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6a actions=output:3
+ cookie=0x9b0000755c90eb, duration=422.38s, table=0, n_packets=3, n_bytes=126, idle_age=36, priority=500,in_port=3,dl_src=9a:d8:73:d8:90:6a,dl_dst=ff:ff:ff:ff:ff:ff actions=output:1
+ cookie=0x9b0000e8285528, duration=421.116s, table=0, n_packets=5, n_bytes=434, idle_age=4, priority=500,in_port=1,dl_src=9a:d8:73:d8:90:6d,dl_dst=9a:d8:73:d8:90:6b actions=output:2
+
+mininet> 
+
+
+find ./ -type f -name "*.pla" -exec sh -c sed -i -e 's/   / /g' {}; sed -i -e 's/^M//g' {}; \;
+
+date; export circuit=3s; export sep=_; export dir=_mutants; export name=Mutants; for mutant in SSF SIF SGF; do  find $circuit$dir/$mutant$name/ -type f -iname "*.blif" -exec sh -c ">$circuit$sep$mutant.ts; /usr/local/bin/btg $circuit.blif {} $circuit$sep$mutant.ts" \;; done; date
+
+echo S=3 >vars; echo name=3>>vars; echo sep=_ >> vars; echo extention=.ts >> vars; echo ext=.pla >> vars; echo out=.output >> vars; for TS in SGF SIF SSF ACF; do echo TS=$TS>> vars; abc -c "read $name$ext; strash; sim -v -m -F 1 -A $S$sep$TS$extention" | grep "^[01][01]*$" > $S$sep$TS$out; echo "killed=0" >> vars; echo "equiv=0" >> vars; echo "total=0">> vars; > killed_$S$sep$TS; find ./mutants/ -type f -name "*.pla" -exec sh -c 'source ./vars; equivalent=`abc -c "miter $name$ext {} ; iprove" | grep UNSATISFIABLE`; if [ "$equivalent" != "" ]; then echo "Equivalent Mutant {}"; equiv=$((equiv +1)); sed -i -e "s/equiv=.*/equiv=$equiv/" ./vars; else total=$((total +1)); abc -c "read {}; strash; sim -v -m -F 1 -A $S$sep$TS$extention" | grep "^[01][01]*$" > {}.$S$sep$TS$out; if [ "`diff $S$sep$TS$out {}.$S$sep$TS$out`" != "" ]; then echo {} >> killed_$S$sep$TS.temp; killed=$((killed+ 1)); fi; sed -i -e "s/killed=.*/killed=$killed/" ./vars; sed -i -e "s/total=.*/total=$total/" ./vars; fi;' \;; if [ -f killed_$S$sep$TS.temp ]; then cat killed_$S$sep$TS.temp | sort | uniq > killed_$S$sep$TS; rm -f killed_$S$sep$TS.temp; fi; source ./vars; echo "scale=2; $killed/$total" | bc | xargs echo "Coverage: $1" >> killed_$S$sep$TS; echo "Total: $total" >> killed_$S$sep$TS; echo "Equivalent: $equiv" >> killed_$S$sep$TS; done; rm -f vars;
+
+export S=3s; export sep=_; echo "Summary for $S:"; for TS in SSF SIF SGF ACF; do echo $TS; file=killed_$S$sep$TS; cat $file; done;
+
+
+Summary for 3s:
+SSF
+./mutants/mutant10.pla
+./mutants/mutant11.pla
+./mutants/mutant14.pla
+./mutants/mutant15.pla
+./mutants/mutant16.pla
+./mutants/mutant17.pla
+./mutants/mutant18.pla
+./mutants/mutant19.pla
+./mutants/mutant1.pla
+./mutants/mutant20.pla
+./mutants/mutant21.pla
+./mutants/mutant22.pla
+./mutants/mutant23.pla
+./mutants/mutant24.pla
+./mutants/mutant25.pla
+./mutants/mutant26.pla
+./mutants/mutant27.pla
+./mutants/mutant28.pla
+./mutants/mutant29.pla
+./mutants/mutant2.pla
+./mutants/mutant30.pla
+./mutants/mutant31.pla
+./mutants/mutant32.pla
+./mutants/mutant33.pla
+./mutants/mutant34.pla
+./mutants/mutant35.pla
+./mutants/mutant36.pla
+./mutants/mutant37.pla
+./mutants/mutant38.pla
+./mutants/mutant39.pla
+./mutants/mutant3.pla
+./mutants/mutant40.pla
+./mutants/mutant41.pla
+./mutants/mutant42.pla
+./mutants/mutant43.pla
+./mutants/mutant4.pla
+./mutants/mutant5.pla
+./mutants/mutant6.pla
+./mutants/mutant8.pla
+./mutants/mutant9.pla
+./mutants/tricky.pla
+Coverage:  .93
+Total: 44
+Equivalent: 1
+SIF
+./mutants/mutant10.pla
+./mutants/mutant11.pla
+./mutants/mutant14.pla
+./mutants/mutant15.pla
+./mutants/mutant16.pla
+./mutants/mutant17.pla
+./mutants/mutant18.pla
+./mutants/mutant19.pla
+./mutants/mutant1.pla
+./mutants/mutant20.pla
+./mutants/mutant21.pla
+./mutants/mutant22.pla
+./mutants/mutant23.pla
+./mutants/mutant24.pla
+./mutants/mutant25.pla
+./mutants/mutant26.pla
+./mutants/mutant27.pla
+./mutants/mutant28.pla
+./mutants/mutant29.pla
+./mutants/mutant2.pla
+./mutants/mutant30.pla
+./mutants/mutant31.pla
+./mutants/mutant32.pla
+./mutants/mutant33.pla
+./mutants/mutant34.pla
+./mutants/mutant35.pla
+./mutants/mutant36.pla
+./mutants/mutant37.pla
+./mutants/mutant38.pla
+./mutants/mutant39.pla
+./mutants/mutant3.pla
+./mutants/mutant40.pla
+./mutants/mutant41.pla
+./mutants/mutant42.pla
+./mutants/mutant43.pla
+./mutants/mutant4.pla
+./mutants/mutant5.pla
+./mutants/mutant6.pla
+./mutants/mutant8.pla
+./mutants/mutant9.pla
+./mutants/tricky.pla
+Coverage:  .93
+Total: 44
+Equivalent: 1
+SGF
+./mutants/mutant10.pla
+./mutants/mutant11.pla
+./mutants/mutant14.pla
+./mutants/mutant15.pla
+./mutants/mutant16.pla
+./mutants/mutant17.pla
+./mutants/mutant18.pla
+./mutants/mutant19.pla
+./mutants/mutant1.pla
+./mutants/mutant20.pla
+./mutants/mutant21.pla
+./mutants/mutant22.pla
+./mutants/mutant23.pla
+./mutants/mutant24.pla
+./mutants/mutant25.pla
+./mutants/mutant26.pla
+./mutants/mutant27.pla
+./mutants/mutant28.pla
+./mutants/mutant29.pla
+./mutants/mutant2.pla
+./mutants/mutant30.pla
+./mutants/mutant31.pla
+./mutants/mutant32.pla
+./mutants/mutant33.pla
+./mutants/mutant34.pla
+./mutants/mutant35.pla
+./mutants/mutant36.pla
+./mutants/mutant37.pla
+./mutants/mutant38.pla
+./mutants/mutant39.pla
+./mutants/mutant3.pla
+./mutants/mutant40.pla
+./mutants/mutant6.pla
+./mutants/mutant8.pla
+./mutants/mutant9.pla
+./mutants/tricky.pla
+Coverage:  .93
+Total: 44
+Equivalent: 1
+ACF
+./mutants/mutant10.pla
+./mutants/mutant11.pla
+./mutants/mutant14.pla
+./mutants/mutant15.pla
+./mutants/mutant16.pla
+./mutants/mutant17.pla
+./mutants/mutant18.pla
+./mutants/mutant19.pla
+./mutants/mutant1.pla
+./mutants/mutant20.pla
+./mutants/mutant21.pla
+./mutants/mutant22.pla
+./mutants/mutant23.pla
+./mutants/mutant24.pla
+./mutants/mutant25.pla
+./mutants/mutant26.pla
+./mutants/mutant27.pla
+./mutants/mutant28.pla
+./mutants/mutant29.pla
+./mutants/mutant2.pla
+./mutants/mutant30.pla
+./mutants/mutant31.pla
+./mutants/mutant32.pla
+./mutants/mutant33.pla
+./mutants/mutant34.pla
+./mutants/mutant35.pla
+./mutants/mutant36.pla
+./mutants/mutant37.pla
+./mutants/mutant38.pla
+./mutants/mutant39.pla
+./mutants/mutant3.pla
+./mutants/mutant40.pla
+./mutants/mutant41.pla
+./mutants/mutant42.pla
+./mutants/mutant43.pla
+./mutants/mutant4.pla
+./mutants/mutant5.pla
+./mutants/mutant6.pla
+./mutants/mutant8.pla
+./mutants/mutant9.pla
+./mutants/tricky.pla
+Coverage:  .93
+Total: 44
+Equivalent: 1
+
+12 13
+
+------ part 2 ----- 
+
+export SDN_CTRLR=192.168.1.35
+./arp $SDN_CTRLR of:0000000000000001
+./arp $SDN_CTRLR of:0000000000000002
+./add $SDN_CTRLR of:0000000000000002 1 2 2 1
+./add $SDN_CTRLR of:0000000000000002 2 1 1 2
+./add $SDN_CTRLR of:0000000000000001 2 1 2 1
+for port in `seq 1 10000`; do ./addp $SDN_CTRLR of:0000000000000001 1 2 $port 1 2; echo $port; done; 
+
+
+
+for port in `seq 1 65535`; do out=`perl -e '$int=$ARGV[0]; $fix=sprintf "%016b", $int; print $fix;' $port`; echo "0101000000000000000101000000000000000000000000100001010000000000000000000000010$out 0010" >> large.pla; done;
+
+
+Context: the test topology with 4 switches (ENASE). from host 1 (10.0.0.1) to host 2 (10.0.0.2) in switch 1 (the one described in the PLA) has a separate rule for each tcp port (1-65535), and rules for ARP and any tcp port in return with a total of 2^16 + 2 rules. This is the generated PLA file. The LUT has the form: #input_port(x1-x3), eth_type(x4-x15), ip_source(x16-x47), ip_dest(x48-x79), tcp_dst_port(x80-x95) / z4(output port 4) z3(output port 3) z2(output port 2) z1(output to port 1) 
+
+As you can see, only on rule 2 ports z4 and z3 are used. But, this is just a particular example, of course.
+
+Simulating a pattern using ABC Time = 0.001062s (1.062ms)
+[jorge@localhost Downloads]$ abc
+UC Berkeley, ABC 1.01 (compiled May  9 2018 17:47:33)
+abc 01> read large.pla
+abc 02> strash
+abc 03> sim -m -v -A large.test
+0010
+Simulation of 32 frames with 8 words did not assert the outputs.    Time =0.001062 sec
+
+for 1000 patterns
+
+abc 03> sim -m -A large.test
+Simulation of 32 frames with 8 words did not assert the outputs.    Time =0.003408 sec
+
+
+root@mininet-vm:/home/mininet/mininet/custom# tcpdump -i s1-eth1 > eth1
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on s1-eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
+^C9452 packets captured
+9466 packets received by filter
+14 packets dropped by kernel
+root@mininet-vm:/home/mininet/mininet/custom# head -1 eth1
+11:29:38.222816 IP 10.0.0.1.51004 > 10.0.0.2.9999: Flags [S], seq 3455588675, win 29200, options [mss 1460,sackOK,TS val 26133695 ecr 0,nop,wscale 9], length 0
+root@mininet-vm:/home/mininet/mininet/custom# 
+
+root@mininet-vm:~# tcpdump -i s1-eth2 > eth2
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on s1-eth2, link-type EN10MB (Ethernet), capture size 262144 bytes
+^C9443 packets captured
+9464 packets received by filter
+21 packets dropped by kernel
+root@mininet-vm:~# head -1 eth2
+11:29:38.223106 IP 10.0.0.1.51004 > 10.0.0.2.9999: Flags [S], seq 3455588675, win 29200, options [mss 1460,sackOK,TS val 26133695 ecr 0,nop,wscale 9], length 0
+root@mininet-vm:~# 
+
+diff 2.9ms
+
+010100110101101100001110011110110001001000001101010100110101101100001110011110110001001000001101100
+100100110101101100001110011110110001001000001101101100110101101100001110011110110001001000001101100
+100100110101101100001110011110110001001000001101101111111111111111111111111111111111111111111111111
+100100110101101100001110011110110001001000001101101100110101101100001110011110110001001000001101010
+010100110101101100001110011110110001001000001101010111111111111111111111111111111111111111111111111
+011100110101101100001110011110110001001000001101011111111111111111111111111111111111111111111111111
+001100110101101100001110011110110001001000001101100100110101101100001110011110110001001000001101010
+001100110101101100001110011110110001001000001101100100110101101100001110011110110001001000001101011
+001100110101101100001110011110110001001000001101100100110101101100001110011110110001001000001101101
+010100110101101100001110011110110001001000001101010100110101101100001110011110110001001000001101101
+011100110101101100001110011110110001001000001101011100110101101100001110011110110001001000001101100
+001100110101101100001110011110110001001000001101100111111111111111111111111111111111111111111111111
+
+
+
